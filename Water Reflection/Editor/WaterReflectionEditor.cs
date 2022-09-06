@@ -8,6 +8,7 @@ public class WaterReflectionEditor : Editor
     private SerializedProperty spriteRenderer;
     private SerializedProperty camera;
     private SerializedProperty waterShader;
+    private SerializedProperty waterTexture;
 
     private void OnEnable()
     {
@@ -18,6 +19,7 @@ public class WaterReflectionEditor : Editor
         spriteRenderer = serializedObject.FindProperty("spriteRenderer");
         camera = serializedObject.FindProperty("camera");
         waterShader = serializedObject.FindProperty("waterShader");
+        waterTexture = serializedObject.FindProperty("waterTexture");
     }
 
     public override void OnInspectorGUI()
@@ -51,6 +53,7 @@ public class WaterReflectionEditor : Editor
         GUILayout.Space(10);
         GUILayout.Label("Shader Parameters", EditorStyles.boldLabel);
         EditorGUI.indentLevel++;
+        EditorGUILayout.PropertyField(waterTexture, new GUIContent("Water Texture", "Water texture used to simulate water."));
         EditorGUILayout.PropertyField(waterShader, new GUIContent("Water Shader", "Shader used to simulate water."));
         waterReflection.color = EditorGUILayout.ColorField(new GUIContent("Water Color", "Water's color."), waterReflection.color);
         waterReflection.turbulencesStrength = EditorGUILayout.FloatField(new GUIContent("Turbulences Strength", "Strength of water's turbulences."), waterReflection.turbulencesStrength);

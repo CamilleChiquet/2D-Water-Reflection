@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class WaterReflection : MonoBehaviour
 {
+    public Texture waterTexture;
     // Sprite that will receive the water shader.
     public SpriteRenderer spriteRenderer;
     // Camera used to capture the reflection scene.
@@ -56,6 +57,7 @@ public class WaterReflection : MonoBehaviour
             camera.transform.position = cameraPosition;
 
             waterMaterial = new Material(waterShader);
+            waterMaterial.SetTexture("_WaterTex", waterTexture);
             waterMaterial.SetTexture("_RenderTex", renderTexture);
             waterMaterial.SetColor("_Color", color);
             waterMaterial.SetFloat("_TurbulencesStrength", turbulencesStrength);
