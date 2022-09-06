@@ -1,6 +1,11 @@
-# 2D-Water-Reflection
-Unity 2D water asset.
+# 2D Water Reflection Asset for Unity
 
-[Asset presentation](https://youtu.be/Bc-nRBqHhmg)
+Unity 2D water reflection asset, customizable.  
+It is possible to put multiple reflection assets in a single scene.
+
+
+Check the install tuto video:
+
+[<img src="2D Water.PNG"/> ](https://youtu.be/Bc-nRBqHhmg)
 
 # Unity version >= 2020 !
